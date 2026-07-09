@@ -1,0 +1,445 @@
+============================================================
+ Model: google/gemini-3.1-flash-lite  (saved as: google-gemini-3.1-flash-lite)
+ temperature=0 | HQ fillers | all 24 queries
+ Sizes: 5, 20, 50, 100, 200, 300, 500, 1000
+ Total API calls: 384
+============================================================
+
+
+── size=5  (12 skills: 12 target + 0 HQ fillers) ──
+(node:58917) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/jaysalvi11/.gemini/antigravity/scratch/skill_experiment/runner_gemini_lite.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/jaysalvi11/.gemini/antigravity/scratch/skill_experiment/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  [1/384 0.3% | 2s] bare ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [2/384 0.5% | 5s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [3/384 0.8% | 8s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [4/384 1.0% | 12s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [5/384 1.3% | 15s] bare ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [6/384 1.6% | 19s] bare ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [7/384 1.8% | 22s] bare ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [8/384 2.1% | 25s] bare ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [9/384 2.3% | 28s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [10/384 2.6% | 31s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [11/384 2.9% | 34s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [12/384 3.1% | 37s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [13/384 3.4% | 40s] bare ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [14/384 3.6% | 43s] bare ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [15/384 3.9% | 47s] bare ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [16/384 4.2% | 50s] bare ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [17/384 4.4% | 53s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [18/384 4.7% | 57s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [19/384 4.9% | 60s] bare ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [20/384 5.2% | 64s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [21/384 5.5% | 67s] bare ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [22/384 5.7% | 71s] bare ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [23/384 6.0% | 74s] bare ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [24/384 6.3% | 78s] bare ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → bare: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+  [25/384 6.5% | 81s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [26/384 6.8% | 84s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [27/384 7.0% | 88s] expert ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [28/384 7.3% | 92s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [29/384 7.6% | 95s] expert ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [30/384 7.8% | 98s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [31/384 8.1% | 101s] expert ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [32/384 8.3% | 104s] expert ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [33/384 8.6% | 107s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [34/384 8.9% | 111s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [35/384 9.1% | 114s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [36/384 9.4% | 117s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [37/384 9.6% | 120s] expert ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [38/384 9.9% | 123s] expert ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [39/384 10.2% | 126s] expert ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [40/384 10.4% | 129s] expert ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [41/384 10.7% | 132s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [42/384 10.9% | 135s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [43/384 11.2% | 138s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [44/384 11.5% | 141s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [45/384 11.7% | 144s] expert ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [46/384 12.0% | 147s] expert ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [47/384 12.2% | 151s] expert ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [48/384 12.5% | 154s] expert ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → expert: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+
+── size=20  (20 skills: 12 target + 8 HQ fillers) ──
+  [49/384 12.8% | 157s] bare ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [50/384 13.0% | 160s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [51/384 13.3% | 163s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [52/384 13.5% | 166s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [53/384 13.8% | 170s] bare ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [54/384 14.1% | 173s] bare ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [55/384 14.3% | 176s] bare ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [56/384 14.6% | 179s] bare ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [57/384 14.8% | 182s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [58/384 15.1% | 186s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [59/384 15.4% | 189s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [60/384 15.6% | 191s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [61/384 15.9% | 194s] bare ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [62/384 16.1% | 198s] bare ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [63/384 16.4% | 201s] bare ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [64/384 16.7% | 204s] bare ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [65/384 16.9% | 207s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [66/384 17.2% | 210s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [67/384 17.4% | 213s] bare ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [68/384 17.7% | 216s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [69/384 18.0% | 220s] bare ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [70/384 18.2% | 224s] bare ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [71/384 18.5% | 227s] bare ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [72/384 18.8% | 231s] bare ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → bare: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+  [73/384 19.0% | 234s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [74/384 19.3% | 237s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [75/384 19.5% | 240s] expert ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [76/384 19.8% | 244s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [77/384 20.1% | 247s] expert ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [78/384 20.3% | 250s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [79/384 20.6% | 253s] expert ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [80/384 20.8% | 256s] expert ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [81/384 21.1% | 259s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [82/384 21.4% | 262s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [83/384 21.6% | 265s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [84/384 21.9% | 268s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [85/384 22.1% | 271s] expert ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [86/384 22.4% | 274s] expert ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [87/384 22.7% | 277s] expert ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [88/384 22.9% | 280s] expert ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [89/384 23.2% | 283s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [90/384 23.4% | 286s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [91/384 23.7% | 289s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [92/384 24.0% | 293s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [93/384 24.2% | 297s] expert ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [94/384 24.5% | 300s] expert ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [95/384 24.7% | 303s] expert ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [96/384 25.0% | 306s] expert ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → expert: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+
+── size=50  (50 skills: 12 target + 38 HQ fillers) ──
+  [97/384 25.3% | 309s] bare ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [98/384 25.5% | 313s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [99/384 25.8% | 316s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [100/384 26.0% | 320s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [101/384 26.3% | 323s] bare ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [102/384 26.6% | 326s] bare ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [103/384 26.8% | 329s] bare ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [104/384 27.1% | 332s] bare ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [105/384 27.3% | 335s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [106/384 27.6% | 339s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [107/384 27.9% | 342s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [108/384 28.1% | 345s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [109/384 28.4% | 348s] bare ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [110/384 28.6% | 352s] bare ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [111/384 28.9% | 355s] bare ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [112/384 29.2% | 358s] bare ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [113/384 29.4% | 361s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [114/384 29.7% | 364s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [115/384 29.9% | 367s] bare ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [116/384 30.2% | 370s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [117/384 30.5% | 373s] bare ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [118/384 30.7% | 377s] bare ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [119/384 31.0% | 380s] bare ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [120/384 31.3% | 384s] bare ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → bare: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+  [121/384 31.5% | 387s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [122/384 31.8% | 390s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [123/384 32.0% | 393s] expert ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [124/384 32.3% | 396s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [125/384 32.6% | 399s] expert ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [126/384 32.8% | 402s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [127/384 33.1% | 405s] expert ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [128/384 33.3% | 408s] expert ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [129/384 33.6% | 411s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [130/384 33.9% | 414s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [131/384 34.1% | 417s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [132/384 34.4% | 421s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [133/384 34.6% | 425s] expert ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [134/384 34.9% | 428s] expert ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [135/384 35.2% | 431s] expert ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [136/384 35.4% | 434s] expert ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [137/384 35.7% | 437s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [138/384 35.9% | 440s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [139/384 36.2% | 444s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [140/384 36.5% | 447s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [141/384 36.7% | 450s] expert ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [142/384 37.0% | 453s] expert ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [143/384 37.2% | 456s] expert ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [144/384 37.5% | 459s] expert ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → expert: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+
+── size=100  (100 skills: 12 target + 88 HQ fillers) ──
+  [145/384 37.8% | 462s] bare ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [146/384 38.0% | 465s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [147/384 38.3% | 468s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [148/384 38.5% | 471s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [149/384 38.8% | 474s] bare ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [150/384 39.1% | 477s] bare ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [151/384 39.3% | 480s] bare ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [152/384 39.6% | 483s] bare ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [153/384 39.8% | 487s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [154/384 40.1% | 490s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [155/384 40.4% | 493s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [156/384 40.6% | 496s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [157/384 40.9% | 499s] bare ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [158/384 41.1% | 503s] bare ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [159/384 41.4% | 506s] bare ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [160/384 41.7% | 510s] bare ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [161/384 41.9% | 513s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [162/384 42.2% | 516s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [163/384 42.4% | 519s] bare ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [164/384 42.7% | 522s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [165/384 43.0% | 525s] bare ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [166/384 43.2% | 529s] bare ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [167/384 43.5% | 533s] bare ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [168/384 43.8% | 536s] bare ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → bare: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+  [169/384 44.0% | 539s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [170/384 44.3% | 542s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [171/384 44.5% | 546s] expert ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [172/384 44.8% | 549s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [173/384 45.1% | 553s] expert ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [174/384 45.3% | 556s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [175/384 45.6% | 559s] expert ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [176/384 45.8% | 563s] expert ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [177/384 46.1% | 566s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [178/384 46.4% | 569s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [179/384 46.6% | 573s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [180/384 46.9% | 576s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [181/384 47.1% | 579s] expert ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [182/384 47.4% | 583s] expert ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [183/384 47.7% | 586s] expert ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [184/384 47.9% | 589s] expert ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [185/384 48.2% | 593s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [186/384 48.4% | 596s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [187/384 48.7% | 599s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [188/384 49.0% | 603s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [189/384 49.2% | 606s] expert ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [190/384 49.5% | 609s] expert ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [191/384 49.7% | 612s] expert ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [192/384 50.0% | 615s] expert ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → expert: 24/24 = 100.0%  [95%CI: 86.2–100.0%]
+
+── size=200  (200 skills: 12 target + 188 HQ fillers) ──
+  [193/384 50.3% | 618s] bare ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [194/384 50.5% | 621s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [195/384 50.8% | 625s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [196/384 51.0% | 628s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [197/384 51.3% | 631s] bare ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [198/384 51.6% | 634s] bare ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [199/384 51.8% | 637s] bare ✗  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [200/384 52.1% | 640s] bare ✗  "help me size this position using the Kelly…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [201/384 52.3% | 643s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [202/384 52.6% | 647s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [203/384 52.9% | 651s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [204/384 53.1% | 654s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [205/384 53.4% | 658s] bare ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [206/384 53.6% | 661s] bare ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [207/384 53.9% | 664s] bare ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [208/384 54.2% | 667s] bare ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [209/384 54.4% | 670s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [210/384 54.7% | 673s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [211/384 54.9% | 676s] bare ✗  "how should my trailing stop adjust now tha…"  →  profit_lock_trail (want: trailing_stop_logic)
+  [212/384 55.2% | 679s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [213/384 55.5% | 683s] bare ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [214/384 55.7% | 686s] bare ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [215/384 56.0% | 689s] bare ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [216/384 56.3% | 692s] bare ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → bare: 21/24 = 87.5%  [95%CI: 69.0–95.7%]
+  [217/384 56.5% | 696s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [218/384 56.8% | 699s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [219/384 57.0% | 702s] expert ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [220/384 57.3% | 706s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [221/384 57.6% | 709s] expert ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [222/384 57.8% | 712s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [223/384 58.1% | 715s] expert ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [224/384 58.3% | 718s] expert ✗  "help me size this position using the Kelly…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [225/384 58.6% | 722s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [226/384 58.9% | 725s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [227/384 59.1% | 729s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [228/384 59.4% | 732s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [229/384 59.6% | 736s] expert ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [230/384 59.9% | 739s] expert ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [231/384 60.2% | 743s] expert ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [232/384 60.4% | 746s] expert ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [233/384 60.7% | 750s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [234/384 60.9% | 754s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [235/384 61.2% | 758s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [236/384 61.5% | 761s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [237/384 61.7% | 765s] expert ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [238/384 62.0% | 768s] expert ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [239/384 62.2% | 771s] expert ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [240/384 62.5% | 774s] expert ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → expert: 23/24 = 95.8%  [95%CI: 79.8–99.3%]
+
+── size=300  (300 skills: 12 target + 288 HQ fillers) ──
+  [241/384 62.8% | 778s] bare ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [242/384 63.0% | 781s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [243/384 63.3% | 784s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [244/384 63.5% | 787s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [245/384 63.8% | 791s] bare ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [246/384 64.1% | 795s] bare ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [247/384 64.3% | 798s] bare ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [248/384 64.6% | 801s] bare ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [249/384 64.8% | 804s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [250/384 65.1% | 807s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [251/384 65.4% | 810s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [252/384 65.6% | 813s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [253/384 65.9% | 817s] bare ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [254/384 66.1% | 820s] bare ✗  "check if there's a buy-side imbalance form…"  →  order_book_imbalance_ratio (want: order_flow_imbalance)
+  [255/384 66.4% | 824s] bare ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [256/384 66.7% | 827s] bare ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [257/384 66.9% | 830s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [258/384 67.2% | 833s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [259/384 67.4% | 836s] bare ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [260/384 67.7% | 839s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [261/384 68.0% | 843s] bare ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [262/384 68.2% | 846s] bare ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [263/384 68.5% | 849s] bare ✗  "set up a walk-forward split for my backtes…"  →  walk_forward_sliding_window (want: backtest_walkforward_split)
+  [264/384 68.8% | 852s] bare ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → bare: 22/24 = 91.7%  [95%CI: 74.2–97.7%]
+  [265/384 69.0% | 855s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [266/384 69.3% | 859s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [267/384 69.5% | 862s] expert ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [268/384 69.8% | 865s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [269/384 70.1% | 869s] expert ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [270/384 70.3% | 872s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [271/384 70.6% | 875s] expert ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [272/384 70.8% | 878s] expert ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [273/384 71.1% | 882s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [274/384 71.4% | 886s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [275/384 71.6% | 890s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [276/384 71.9% | 893s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [277/384 72.1% | 896s] expert ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [278/384 72.4% | 900s] expert ✗  "check if there's a buy-side imbalance form…"  →  order_book_imbalance_ratio (want: order_flow_imbalance)
+  [279/384 72.7% | 903s] expert ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [280/384 72.9% | 906s] expert ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [281/384 73.2% | 910s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [282/384 73.4% | 913s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [283/384 73.7% | 916s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [284/384 74.0% | 920s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [285/384 74.2% | 923s] expert ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [286/384 74.5% | 926s] expert ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [287/384 74.7% | 930s] expert ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [288/384 75.0% | 933s] expert ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → expert: 23/24 = 95.8%  [95%CI: 79.8–99.3%]
+
+── size=500  (500 skills: 12 target + 488 HQ fillers) ──
+  [289/384 75.3% | 936s] bare ✗  "funding on ETH perps looks really stretche…"  →  perp_premium_z_score (want: funding_rate_extreme)
+  [290/384 75.5% | 939s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [291/384 75.8% | 943s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [292/384 76.0% | 946s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [293/384 76.3% | 949s] bare ✗  "does the book look thin enough right now f…"  →  order_book_slope (want: liquidation_cascade_setup)
+  [294/384 76.6% | 953s] bare ✗  "check whether there's stop-hunt or cascade…"  →  liquidation_heatmap_volume_clusters (want: liquidation_cascade_setup)
+  [295/384 76.8% | 956s] bare ✗  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [296/384 77.1% | 959s] bare ✗  "help me size this position using the Kelly…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [297/384 77.3% | 962s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [298/384 77.6% | 966s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [299/384 77.9% | 969s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [300/384 78.1% | 973s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [301/384 78.4% | 976s] bare ✗  "what does short-term order flow imbalance …"  →  order_book_imbalance_ratio (want: order_flow_imbalance)
+  [302/384 78.6% | 980s] bare ✗  "check if there's a buy-side imbalance form…"  →  order_book_imbalance_ratio (want: order_flow_imbalance)
+  [303/384 78.9% | 983s] bare ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [304/384 79.2% | 986s] bare ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [305/384 79.4% | 991s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [306/384 79.7% | 994s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [307/384 79.9% | 998s] bare ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [308/384 80.2% | 1001s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [309/384 80.5% | 1005s] bare ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [310/384 80.7% | 1008s] bare ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [311/384 81.0% | 1011s] bare ✗  "set up a walk-forward split for my backtes…"  →  walk_forward_anchored_with_gap (want: backtest_walkforward_split)
+  [312/384 81.3% | 1014s] bare ✗  "how should I split this time series so I d…"  →  sequential_train_test_split (want: backtest_walkforward_split)
+  → bare: 15/24 = 62.5%  [95%CI: 42.7–78.8%]
+  [313/384 81.5% | 1018s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [314/384 81.8% | 1022s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [315/384 82.0% | 1026s] expert ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [316/384 82.3% | 1029s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [317/384 82.6% | 1032s] expert ✓  "does the book look thin enough right now f…"  →  liquidation_cascade_setup
+  [318/384 82.8% | 1036s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [319/384 83.1% | 1039s] expert ✗  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [320/384 83.3% | 1043s] expert ✗  "help me size this position using the Kelly…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [321/384 83.6% | 1046s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [322/384 83.9% | 1050s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [323/384 84.1% | 1053s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [324/384 84.4% | 1058s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [325/384 84.6% | 1061s] expert ✗  "what does short-term order flow imbalance …"  →  order_book_imbalance_ratio (want: order_flow_imbalance)
+  [326/384 84.9% | 1065s] expert ✗  "check if there's a buy-side imbalance form…"  →  order_book_imbalance_ratio (want: order_flow_imbalance)
+  [327/384 85.2% | 1068s] expert ✓  "what's the micro-price given the current b…"  →  micro_price_estimate
+  [328/384 85.4% | 1071s] expert ✓  "compute a size-weighted fair value from th…"  →  micro_price_estimate
+  [329/384 85.7% | 1076s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [330/384 85.9% | 1080s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [331/384 86.2% | 1083s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [332/384 86.5% | 1087s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [333/384 86.7% | 1091s] expert ✓  "how long until the next funding payment an…"  →  funding_time_to_settle
+  [334/384 87.0% | 1096s] expert ✓  "when does funding settle next on this perp…"  →  funding_time_to_settle
+  [335/384 87.2% | 1099s] expert ✓  "set up a walk-forward split for my backtes…"  →  backtest_walkforward_split
+  [336/384 87.5% | 1102s] expert ✓  "how should I split this time series so I d…"  →  backtest_walkforward_split
+  → expert: 20/24 = 83.3%  [95%CI: 64.1–93.3%]
+
+── size=1000  (992 skills: 12 target + 980 HQ fillers) ──
+  [337/384 87.8% | 1105s] bare ✗  "funding on ETH perps looks really stretche…"  →  perp_premium_z_score (want: funding_rate_extreme)
+  [338/384 88.0% | 1109s] bare ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [339/384 88.3% | 1112s] bare ✓  "price is pushing higher but I don't think …"  →  cvd_divergence
+  [340/384 88.5% | 1115s] bare ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [341/384 88.8% | 1119s] bare ✗  "does the book look thin enough right now f…"  →  liquidation_cascade_simulation (want: liquidation_cascade_setup)
+  [342/384 89.1% | 1122s] bare ✗  "check whether there's stop-hunt or cascade…"  →  liquidation_heatmap_builder (want: liquidation_cascade_setup)
+  [343/384 89.3% | 1126s] bare ✗  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [344/384 89.6% | 1130s] bare ✗  "help me size this position using the Kelly…"  →  kelly_criterion_sizing (want: kelly_position_size)
+  [345/384 89.8% | 1133s] bare ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [346/384 90.1% | 1136s] bare ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [347/384 90.4% | 1140s] bare ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [348/384 90.6% | 1144s] bare ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [349/384 90.9% | 1148s] bare ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [350/384 91.1% | 1152s] bare ✗  "check if there's a buy-side imbalance form…"  →  bid_ask_imbalance (want: order_flow_imbalance)
+  [351/384 91.4% | 1156s] bare ✗  "what's the micro-price given the current b…"  →  microprice_estimate (want: micro_price_estimate)
+  [352/384 91.7% | 1159s] bare ✗  "compute a size-weighted fair value from th…"  →  microprice_estimate (want: micro_price_estimate)
+  [353/384 91.9% | 1162s] bare ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [354/384 92.2% | 1166s] bare ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [355/384 92.4% | 1169s] bare ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [356/384 92.7% | 1172s] bare ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [357/384 93.0% | 1177s] bare ✗  "how long until the next funding payment an…"  →  next_funding_timestamp (want: funding_time_to_settle)
+  [358/384 93.2% | 1180s] bare ✗  "when does funding settle next on this perp…"  →  next_funding_timestamp (want: funding_time_to_settle)
+  [359/384 93.5% | 1183s] bare ✗  "set up a walk-forward split for my backtes…"  →  walk_forward_sliding_window (want: backtest_walkforward_split)
+  [360/384 93.8% | 1186s] bare ✗  "how should I split this time series so I d…"  →  time_series_cv_split (want: backtest_walkforward_split)
+  → bare: 12/24 = 50.0%  [95%CI: 31.4–68.6%]
+  [361/384 94.0% | 1190s] expert ✓  "funding on ETH perps looks really stretche…"  →  funding_rate_extreme
+  [362/384 94.3% | 1195s] expert ✓  "check if funding rate is at an unusual ext…"  →  funding_rate_extreme
+  [363/384 94.5% | 1200s] expert ✗  "price is pushing higher but I don't think …"  →  cvd_reversal_pattern (want: cvd_divergence)
+  [364/384 94.8% | 1203s] expert ✓  "is there a bearish divergence between volu…"  →  cvd_divergence
+  [365/384 95.1% | 1208s] expert ✗  "does the book look thin enough right now f…"  →  liquidation_cascade_risk_score (want: liquidation_cascade_setup)
+  [366/384 95.3% | 1213s] expert ✓  "check whether there's stop-hunt or cascade…"  →  liquidation_cascade_setup
+  [367/384 95.6% | 1217s] expert ✓  "given a 55% edge and 1.8 to 1 payoff, what…"  →  kelly_position_size
+  [368/384 95.8% | 1222s] expert ✓  "help me size this position using the Kelly…"  →  kelly_position_size
+  [369/384 96.1% | 1225s] expert ✓  "can you check my backtest code for any loo…"  →  lookahead_bias_audit
+  [370/384 96.4% | 1230s] expert ✓  "I think my indicator might be peeking at t…"  →  lookahead_bias_audit
+  [371/384 96.6% | 1233s] expert ✓  "what stop distance should I use given the …"  →  atr_dynamic_stop
+  [372/384 96.9% | 1237s] expert ✓  "help me set a volatility-adjusted stop los…"  →  atr_dynamic_stop
+  [373/384 97.1% | 1242s] expert ✓  "what does short-term order flow imbalance …"  →  order_flow_imbalance
+  [374/384 97.4% | 1247s] expert ✓  "check if there's a buy-side imbalance form…"  →  order_flow_imbalance
+  [375/384 97.7% | 1251s] expert ✗  "what's the micro-price given the current b…"  →  microprice_estimate (want: micro_price_estimate)
+  [376/384 97.9% | 1255s] expert ✗  "compute a size-weighted fair value from th…"  →  microprice_estimate (want: micro_price_estimate)
+  [377/384 98.2% | 1260s] expert ✓  "is this trade positive EV after fees -- 60…"  →  trade_ev_calculator
+  [378/384 98.4% | 1264s] expert ✓  "calculate expected value for this setup in…"  →  trade_ev_calculator
+  [379/384 98.7% | 1267s] expert ✓  "how should my trailing stop adjust now tha…"  →  trailing_stop_logic
+  [380/384 99.0% | 1272s] expert ✓  "update the trailing stop given price moved…"  →  trailing_stop_logic
+  [381/384 99.2% | 1276s] expert ✗  "how long until the next funding payment an…"  →  next_funding_timestamp (want: funding_time_to_settle)
+  [382/384 99.5% | 1279s] expert ✗  "when does funding settle next on this perp…"  →  next_funding_timestamp (want: funding_time_to_settle)
+  [383/384 99.7% | 1283s] expert ✗  "set up a walk-forward split for my backtes…"  →  time_series_cv_split (want: backtest_walkforward_split)
+  [384/384 100.0% | 1288s] expert ✗  "how should I split this time series so I d…"  →  time_series_cv_split (want: backtest_walkforward_split)
+  → expert: 16/24 = 66.7%  [95%CI: 46.7–82.0%]
+
+============================================================
+ Done in 1289.7s
+============================================================
+
+RESULTS — google-gemini-3.1-flash-lite
+size   bare     bare CI            expert   expert CI
+────────────────────────────────────────────────────────────
+5      100.0%   [86.2–100.0%]   100.0%   [86.2–100.0%]
+20     100.0%   [86.2–100.0%]   100.0%   [86.2–100.0%]
+50     100.0%   [86.2–100.0%]   100.0%   [86.2–100.0%]
+100    100.0%   [86.2–100.0%]   100.0%   [86.2–100.0%]
+200    87.5%    [69.0–95.7%]    95.8%    [79.8–99.3%]
+300    91.7%    [74.2–97.7%]    95.8%    [79.8–99.3%]
+500    62.5%    [42.7–78.8%]    83.3%    [64.1–93.3%]
+1000   50.0%    [31.4–68.6%]    66.7%    [46.7–82.0%]
+
+Saved → results_google_gemini_3_1_flash_lite.json

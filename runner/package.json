@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@aws/bedrock-token-generator": "^1.1.0"
+  }
+}

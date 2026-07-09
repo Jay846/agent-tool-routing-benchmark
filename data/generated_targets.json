@@ -1,0 +1,938 @@
+[
+  {
+    "id": "pair_trading_cointegration",
+    "concept": "Identify cointegrated pairs and generate mean-reversion trading signals using spread z-scores.",
+    "disambiguator": "Focuses on statistical cointegration testing and spread normalization, not simple correlation.",
+    "example": "For stocks A (price=100) and B (price=50) with hedge ratio 2, spread = 100 - 2*50 = 0. If spread z-score hits +2, short A and long B.",
+    "queries": [
+      "Find cointegrated pairs in the S&P 500 and generate a mean-reversion signal.",
+      "How to trade the spread when z-score exceeds 2 standard deviations?",
+      "Calculate hedge ratio for a pair of stocks using Engle-Granger test.",
+      "What is the current spread z-score for AAPL and MSFT?",
+      "Backtest a pairs trading strategy on energy stocks with 60-day lookback."
+    ]
+  },
+  {
+    "id": "bollinger_band_reversion",
+    "concept": "Use Bollinger Bands to identify overbought/oversold conditions and generate mean-reversion signals.",
+    "disambiguator": "Relies on moving average and standard deviation bands, distinct from other volatility-based signals.",
+    "example": "If stock price=105, 20-day MA=100, 2σ=10, price touches upper band (110), go short expecting reversion to mean.",
+    "queries": [
+      "Generate a mean-reversion signal for GOOG when price hits the upper Bollinger Band.",
+      "What is the current Bollinger Band width for TSLA?",
+      "Backtest a strategy that buys when price touches lower band and sells at middle band.",
+      "Show price with 20-day Bollinger Bands and highlight reversal points.",
+      "Calculate the %b indicator for AMZN and generate a signal when %b > 0.8."
+    ]
+  },
+  {
+    "id": "mean_reversion_momentum_oscillator",
+    "concept": "Use RSI or stochastic oscillator to generate contrarian signals at extreme levels.",
+    "disambiguator": "Focuses on momentum oscillators to time reversals, not price or volume patterns.",
+    "example": "If 14-day RSI of stock is 15 (oversold), buy with target reversion to RSI 50.",
+    "queries": [
+      "Generate a buy signal when RSI drops below 30 for AAPL.",
+      "What is the current stochastic %K and %D for MSFT?",
+      "Backtest a strategy that shorts when RSI > 70 on the hourly chart.",
+      "Identify divergences between price and RSI for a stock.",
+      "Calculate the RSI of a portfolio and suggest mean-reversion trades."
+    ]
+  },
+  {
+    "id": "seasonal_mean_reversion",
+    "concept": "Detect calendar-based seasonal patterns and generate mean-reversion trades around predictable events.",
+    "disambiguator": "Exploits recurring calendar effects like turn-of-month or earnings season, not stochastic patterns.",
+    "example": "Buy S&P 500 on the last trading day of month and sell on first day of next month; historical average return +0.5%.",
+    "queries": [
+      "Generate a mean-reversion signal based on the January effect for small-cap stocks.",
+      "What is the average return for trading the turn-of-month effect in the past 10 years?",
+      "Backtest a strategy that buys on the day before earnings and sells two days after.",
+      "Identify seasonal mean-reversion opportunities in gold futures around Diwali.",
+      "Calculate the seasonal z-score for the S&P 500 on the last Friday of each month."
+    ]
+  },
+  {
+    "id": "volatility_mean_reversion",
+    "concept": "Trade mean reversion of implied volatility or volatility indices like VIX using futures or options.",
+    "disambiguator": "Focuses on volatility surface and term structure, not underlying asset price.",
+    "example": "If VIX futures are in steep contango (e.g., spot 20, front-month 25), short futures expecting convergence.",
+    "queries": [
+      "Generate a mean-reversion signal for VIX futures when term structure is in backwardation.",
+      "Calculate the z-score of VIX relative to its 30-day moving average.",
+      "Backtest a strategy that sells straddles when implied volatility is high.",
+      "Identify reversal points in the VVIX index using Bollinger Bands.",
+      "What is the current spread between VIX spot and first-month futures?"
+    ]
+  },
+  {
+    "id": "cross_asset_mean_reversion",
+    "concept": "Identify mean-reversion relationships between different asset classes (e.g., stocks vs bonds) using rolling regression.",
+    "disambiguator": "Extends pair trading to non-equity assets like commodities, currencies, or indices.",
+    "example": "If S&P 500 vs 10Y Treasury yield z-score of rolling regression hits -2, buy stocks and short bonds.",
+    "queries": [
+      "Find a mean-reverting relationship between gold and the US dollar index.",
+      "Generate a signal when the spread between WTI and Brent crude oil exceeds 2 standard deviations.",
+      "Backtest a cross-asset mean-reversion strategy using TIP and SPY.",
+      "Calculate the hedge ratio between the S&P 500 and the VIX.",
+      "Identify cointegrated pairs between currency pairs and commodities."
+    ]
+  },
+  {
+    "id": "intraday_mean_reversion",
+    "concept": "Trade mean reversion on intraday timescales using order flow imbalance or tick-level data.",
+    "disambiguator": "Specifically designed for high-frequency, short-term reversals within the trading day.",
+    "example": "If price drops 2% in 5 minutes with high volume, buy expecting bounce within 30 minutes.",
+    "queries": [
+      "Generate a buy signal for a stock that dropped 3% in 10 minutes on high volume.",
+      "Backtest an intraday mean-reversion strategy using 1-minute price data.",
+      "Calculate the mean reversion half-life for a stock using intraday trades.",
+      "Identify price reversals after large order flow imbalances.",
+      "What is the probability of a bounce after a 5-minute sharp decline?"
+    ]
+  },
+  {
+    "id": "statistical_arbitrage_factor_model",
+    "concept": "Use factor model residuals (e.g., Fama-French) to identify mispriced stocks for mean-reversion trades.",
+    "disambiguator": "Focuses on residuals from multi-factor models, not simple price spreads.",
+    "example": "If stock's residual from 3-factor model is +2 sigma, short stock expecting residual to revert to zero.",
+    "queries": [
+      "Generate a mean-reversion signal using the residual from the Fama-French 3-factor model for AAPL.",
+      "Calculate the z-score of a stock's residual from a PCA-based factor model.",
+      "Backtest a statistical arbitrage strategy on a universe of 500 stocks using factor residuals.",
+      "Identify stocks with extreme residuals in the energy sector.",
+      "What is the current residual value for TSLA from the Carhart 4-factor model?"
+    ]
+  },
+  {
+    "id": "limit_order_book_imbalance",
+    "concept": "Calculate the order book imbalance ratio to predict short-term price direction.",
+    "disambiguator": "Focuses on the volume disparity between bid and ask sides, not just spread or depth.",
+    "example": "For a stock with 10,000 shares bid at $100 and 5,000 shares ask at $100.05, imbalance ratio = (10000-5000)/(10000+5000)=0.33, suggesting bullish pressure.",
+    "queries": [
+      "What is the current order book imbalance for AAPL?",
+      "Calculate the bid-ask volume imbalance for MSFT.",
+      "Show me the imbalance ratio for the top 5 stocks by volume.",
+      "Is there a significant order book imbalance in the first minute of trading?",
+      "How does order book imbalance correlate with next-minute returns?"
+    ]
+  },
+  {
+    "id": "microprice_midpoint",
+    "concept": "Compute the microprice as a weighted average of best bid and ask prices by their sizes.",
+    "disambiguator": "Provides a more precise price estimate than the simple mid-price by incorporating depth.",
+    "example": "Best bid: 100.00 with size 10,000; best ask: 100.02 with size 5,000; microprice = (100.00*10000 + 100.02*5000)/(10000+5000) = 100.0067.",
+    "queries": [
+      "What is the microprice for TSLA right now?",
+      "Calculate the microprice for the ES futures contract.",
+      "Compare microprice and mid-price for the last 100 trades.",
+      "Show microprice evolution during the last 5 minutes.",
+      "Is the microprice a better predictor of next trade price than mid-price?"
+    ]
+  },
+  {
+    "id": "order_book_slope",
+    "concept": "Estimate the slope of the cumulative order book depth around the best bid and ask to gauge liquidity resilience.",
+    "disambiguator": "Captures how quickly depth changes with price, unlike static spread or total depth.",
+    "example": "If cumulative volume at price levels $100.00, $99.99, $99.98 is 1000, 2000, 3000 shares, the slope (depth per tick) is 1000 shares/tick.",
+    "queries": [
+      "What is the order book slope for GOOGL?",
+      "Compute the bid-side slope of the order book for Amazon.",
+      "How steep is the order book for BTC/USD?",
+      "Compare the slopes of the top two stocks by volume.",
+      "Is a steep order book slope associated with lower volatility?"
+    ]
+  },
+  {
+    "id": "cancellation_rate_estimation",
+    "concept": "Estimate the rate of order cancellations from the order book to detect spoofing or liquidity evaporation.",
+    "disambiguator": "Focuses on cancellations, not just additions, to identify aggressive order book dynamics.",
+    "example": "In one minute, 5000 shares added to bid, 3000 cancelled, cancellation rate = 3000/5000 = 60%.",
+    "queries": [
+      "What is the cancellation rate of limit orders for NFLX?",
+      "Detect unusual cancellation activity in the order book of crude oil futures.",
+      "Compare cancellation rates between high and low volatility periods.",
+      "Show cancellation rate for the last hour for SPY.",
+      "Is a high cancellation rate a signal of impending price move?"
+    ]
+  },
+  {
+    "id": "liquidity_dark_pool_detection",
+    "concept": "Identify potential dark pool activity by analyzing trade sizes relative to displayed order book depth.",
+    "disambiguator": "Distinguishes hidden liquidity from visible orders by comparing trade size to visible depth.",
+    "example": "A trade of 10,000 shares occurs when only 1,000 shares visible at best ask, indicating dark pool execution.",
+    "queries": [
+      "Detect dark pool trades in the last hour for AAPL.",
+      "What percentage of trades in MSFT are likely dark pool?",
+      "Compare visible vs hidden liquidity for the S&P 500 ETF.",
+      "Identify stocks with high dark pool activity today.",
+      "Is dark pool volume increasing before earnings announcements?"
+    ]
+  },
+  {
+    "id": "order_book_entropy",
+    "concept": "Compute the entropy of the order book depth distribution to measure market uncertainty.",
+    "disambiguator": "Quantifies disorder in order placement, unlike simple concentration metrics.",
+    "example": "For bid levels with volumes [1000,500,200], probabilities [0.588,0.294,0.118], entropy = -0.588*log2(0.588)-0.294*log2(0.294)-0.118*log2(0.118)=1.38 bits.",
+    "queries": [
+      "What is the order book entropy for the EUR/USD currency pair?",
+      "Calculate entropy of the limit order book for TSLA.",
+      "Compare entropy before and after a macroeconomic announcement.",
+      "Show entropy trend for the last 10 minutes for Bitcoin.",
+      "Does high entropy predict wider spreads?"
+    ]
+  },
+  {
+    "id": "price_impact_curve_slope",
+    "concept": "Estimate the slope of the price impact curve from recent trades to predict cost of market orders.",
+    "disambiguator": "Focuses on the relationship between trade size and price movement, not just static spread.",
+    "example": "If a 1000-share market buy moves price by $0.05 and a 2000-share move by $0.09, the slope is $0.04 per additional 1000 shares.",
+    "queries": [
+      "What is the price impact slope for GOOGL currently?",
+      "Calculate the market order impact cost for a 5000-share order in AMZN.",
+      "Compare price impact curves for large-cap vs small-cap stocks.",
+      "Show the price impact for the last 50 trades in the ES futures.",
+      "Is the price impact curve linear or concave for liquid stocks?"
+    ]
+  },
+  {
+    "id": "order_book_propagation_speed",
+    "concept": "Measure the speed at which new information propagates through the order book across multiple price levels.",
+    "disambiguator": "Tracks the time delay between updates at different depths, unlike simple order arrival rates.",
+    "example": "A new best bid appears at time t, and 10ms later the second best bid updates; propagation speed = 1 tick per 10ms.",
+    "queries": [
+      "What is the order book propagation speed for AAPL?",
+      "Calculate how fast order book updates cascade for the S&P 500 ETF.",
+      "Compare propagation speeds during normal vs volatile trading.",
+      "Show propagation speed for the top 5 stocks by tick frequency.",
+      "Is faster propagation speed associated with lower latency arbitrage opportunities?"
+    ]
+  },
+  {
+    "id": "black_scholes_pricing",
+    "concept": "Price European options using the Black-Scholes formula.",
+    "disambiguator": "Focuses on closed-form pricing for plain vanilla options, not numerical methods.",
+    "example": "Price a 6-month ATM call on a stock at $100 with 20% vol and 5% risk-free rate.",
+    "queries": [
+      "What is the Black-Scholes price for a 3-month call with strike $50, spot $52, vol 25%, rate 2%?",
+      "Calculate the premium of a European put using Black-Scholes with S=100, K=95, T=1, r=3%, sigma=0.2.",
+      "Given S=200, K=210, T=0.5, r=1%, q=0%, sigma=0.3, find the call price.",
+      "Price a 9-month at-the-money call with spot 150, vol 18%, risk-free 2.5%.",
+      "Compute Black-Scholes price for a put with spot 80, strike 75, time 0.25, rate 1.5%, vol 0.22."
+    ]
+  },
+  {
+    "id": "delta_hedging",
+    "concept": "Determine the number of shares to hedge an option position to achieve delta neutrality.",
+    "disambiguator": "Focuses on dynamic hedging of delta risk, distinct from other Greeks.",
+    "example": "If an option delta is 0.6 and you are short 10 calls, buy 600 shares of underlying.",
+    "queries": [
+      "I am short 20 call options with delta 0.4 each. How many shares do I need to buy to be delta neutral?",
+      "A portfolio has gamma and delta. If delta is 1500, how many futures (delta 1 each) to hedge?",
+      "If a call delta is 0.75 and I hold 100 calls, what is the hedge ratio for the underlying?",
+      "You are long 50 puts with delta -0.3 each. What position in the underlying makes delta zero?",
+      "Delta of a put is -0.5. How many shares should you sell to hedge 100 short puts?"
+    ]
+  },
+  {
+    "id": "gamma_exposure",
+    "concept": "Calculate gamma and its impact on delta changes for large underlying moves.",
+    "disambiguator": "Focuses on gamma as the rate of change of delta, important for convexity.",
+    "example": "A call with gamma 0.05 means delta increases by 0.05 for every $1 rise in underlying.",
+    "queries": [
+      "What is the gamma of an ATM option with spot 100, strike 100, 30 days to expiry, vol 20%, rate 5%?",
+      "If gamma is 0.1 and underlying moves $2, how much does delta change?",
+      "Compare gamma for a 1-month vs 6-month ATM option on the same underlying.",
+      "A put has gamma 0.03. If underlying drops $5, what is the new delta?",
+      "How does gamma affect the profitability of a straddle position?"
+    ]
+  },
+  {
+    "id": "vega_volatility_sensitivity",
+    "concept": "Measure option price sensitivity to implied volatility changes using vega.",
+    "disambiguator": "Focuses on vega as the risk measure for volatility, distinct from delta and gamma.",
+    "example": "A vega of 0.2 means the option price changes by $0.20 for each 1% change in implied vol.",
+    "queries": [
+      "What is the vega of a 3-month ATM call with spot 100, strike 100, vol 25%, rate 2%?",
+      "If vega is 0.15 and implied vol increases by 2%, how much does the option price increase?",
+      "Which option has higher vega: a 1-month or a 1-year ATM option?",
+      "Calculate the vega of a put with the same parameters as a call. Is it the same?",
+      "How does vega change as an option moves from OTM to ITM?"
+    ]
+  },
+  {
+    "id": "theta_time_decay",
+    "concept": "Estimate daily time decay of an option's value using theta.",
+    "disambiguator": "Focuses on theta as the cost of holding an option, distinct from other Greeks.",
+    "example": "A theta of -0.05 means the option loses $0.05 per day, all else equal.",
+    "queries": [
+      "What is the daily theta for a 30-day ATM call with spot 100, strike 100, vol 20%, rate 5%?",
+      "If theta is -0.08, how much value decays over a weekend (3 days)?",
+      "Why do short-dated options have higher theta than long-dated options?",
+      "Calculate theta for a deep ITM put with one month to expiry.",
+      "How does theta affect a calendar spread strategy?"
+    ]
+  },
+  {
+    "id": "implied_vol_smile",
+    "concept": "Interpret the volatility smile pattern across strike prices for equity options.",
+    "disambiguator": "Focuses on the skew or smile shape, not flat implied vol.",
+    "example": "OTM puts have higher implied vol than ATM calls, creating a skew.",
+    "queries": [
+      "Why do OTM puts have higher implied vol than ATM calls in equity markets?",
+      "Given option chain data, plot the implied volatility smile for 1-month options.",
+      "How does the volatility smile change after a market crash?",
+      "Compare the volatility smile for index options vs single stock options.",
+      "Calculate the implied vol for a 25-delta put using the smile curve."
+    ]
+  },
+  {
+    "id": "volatility_term_structure",
+    "concept": "Analyze implied volatility across different maturities to form the term structure.",
+    "disambiguator": "Focuses on time dimension, not strike dimension like smile.",
+    "example": "Short-term implied vol is 30%, long-term is 20%, indicating backwardation.",
+    "queries": [
+      "What is the typical shape of the volatility term structure in normal markets?",
+      "Given implied vols for 1M, 3M, 6M, 1Y, fit a curve and predict 2Y vol.",
+      "How does the term structure behave during a crisis?",
+      "Calculate the forward implied volatility between 3M and 6M from the term structure.",
+      "Compare the term structure for VIX futures vs SPX options."
+    ]
+  },
+  {
+    "id": "surface_interpolation",
+    "concept": "Interpolate and extrapolate implied volatility across strikes and maturities to build a surface.",
+    "disambiguator": "Focuses on constructing a complete grid from sparse data, distinct from analyzing points.",
+    "example": "Given vols for 10 strikes and 5 maturities, use SVI to fill missing values.",
+    "queries": [
+      "Interpolate implied vol for a strike that is not listed using cubic splines on the smile.",
+      "Given term structure points at 1M, 3M, 6M, estimate 2M vol using linear interpolation.",
+      "Extrapolate implied vol for a 2-year option from 1-year data using constant forward variance.",
+      "Build a volatility surface from 20 option quotes using the SVI model.",
+      "How to handle arbitrage violations when interpolating the volatility surface?"
+    ]
+  },
+  {
+    "id": "gdp_nowcasting",
+    "concept": "Predict current quarter GDP growth using high-frequency indicators before official release.",
+    "disambiguator": "Focuses on real-time estimation rather than historical forecasting.",
+    "example": "Using monthly retail sales, industrial production, and payroll data to estimate Q2 GDP growth at 2.3% before the advance estimate is published.",
+    "queries": [
+      "What is the nowcast for Q3 GDP based on latest industrial production data?",
+      "Estimate current quarter GDP growth using retail sales and employment figures.",
+      "How does the GDP nowcast change after the latest durable goods report?",
+      "Provide a real-time GDP estimate for the current quarter using high-frequency indicators.",
+      "Calculate the implied Q2 GDP growth from the latest monthly economic data."
+    ]
+  },
+  {
+    "id": "cpi_trade_on_breakevens",
+    "concept": "Trade inflation expectations by analyzing CPI components and breakeven inflation rates.",
+    "disambiguator": "Focuses on market-implied inflation from TIPS and swaps, not just headline CPI.",
+    "example": "If 5-year breakeven inflation rises to 2.8% while core CPI MoM comes in at 0.4%, go long TIPS breakevens expecting further rise.",
+    "queries": [
+      "What is the implied inflation expectation from 5-year TIPS breakeven rates?",
+      "How to trade if core CPI exceeds expectations and breakevens are low?",
+      "Analyze the CPI release impact on breakeven inflation rates.",
+      "Should I buy or sell TIPS based on the latest CPI data?",
+      "Calculate the breakeven inflation rate and compare to survey expectations."
+    ]
+  },
+  {
+    "id": "employment_trade_on_nonfarm",
+    "concept": "Trade based on nonfarm payrolls surprise relative to market expectations.",
+    "disambiguator": "Focuses on the immediate market reaction to the monthly jobs report.",
+    "example": "If nonfarm payrolls beat consensus by 150k and unemployment drops to 3.7%, go long USD and short Treasuries for a 10bp yield rise.",
+    "queries": [
+      "How to trade if nonfarm payrolls come in above expectations?",
+      "What is the market impact of a 200k payroll miss?",
+      "Analyze the employment report and suggest a trade on the dollar.",
+      "Should I expect a rally or sell-off in bonds after a strong jobs report?",
+      "Calculate the probability of a rate hike based on payrolls surprise."
+    ]
+  },
+  {
+    "id": "central_bank_dovish_hawkish",
+    "concept": "Assess central bank policy stance from meeting minutes and speeches to predict rate moves.",
+    "disambiguator": "Focuses on qualitative text analysis rather than quantitative data.",
+    "example": "After analyzing Fed minutes with 5 mentions of 'inflation persistence' vs 2 of 'economic slowdown', predict a 25bp hike with 70% probability.",
+    "queries": [
+      "Is the Fed leaning dovish or hawkish based on latest minutes?",
+      "Analyze the tone of the ECB press conference and predict rate decision.",
+      "How does the Bank of Japan's language affect USDJPY?",
+      "Score the hawkishness of the latest FOMC statement.",
+      "What is the probability of a rate cut from the RBNZ based on their rhetoric?"
+    ]
+  },
+  {
+    "id": "yield_curve_flattener",
+    "concept": "Trade the yield curve slope using 2s10s spread as a recession indicator.",
+    "disambiguator": "Focuses on curve dynamics, not absolute yield levels.",
+    "example": "If 2s10s spread inverts to -50bp and ISM manufacturing drops below 45, short 2-year / long 10-year futures to bet on further flattening.",
+    "queries": [
+      "What does the 2s10s yield curve inversion signal for growth?",
+      "How to trade a flattening yield curve using futures?",
+      "Is the yield curve steepening or flattening based on recent data?",
+      "Calculate the probability of recession from the 2s10s spread.",
+      "Suggest a trade on the curve if PMI data surprises to the downside."
+    ]
+  },
+  {
+    "id": "macro_volatility_skew",
+    "concept": "Trade options on macro events using implied volatility skew for tail risk hedging.",
+    "disambiguator": "Focuses on options market pricing of macro risks, not directional trades.",
+    "example": "If 1-month S&P 500 put skew is elevated (25-delta put IV 30% vs ATM 20%) ahead of CPI, buy put spreads to hedge a downside miss.",
+    "queries": [
+      "What is the implied volatility skew for S&P 500 before the next FOMC?",
+      "How to hedge a portfolio against a bad CPI release using options?",
+      "Analyze the macro event risk priced in equity options.",
+      "Is there a cheap way to buy protection ahead of payrolls?",
+      "Calculate the cost of a tail hedge for a macro event."
+    ]
+  },
+  {
+    "id": "pmis_trade_on_manufacturing",
+    "concept": "Trade based on manufacturing PMI surprises relative to consensus.",
+    "disambiguator": "Focuses on the leading indicator aspect of PMIs for economic momentum.",
+    "example": "If US manufacturing PMI drops to 48.5 from 52.3 while consensus expected 51, short cyclical equities and go long Treasuries.",
+    "queries": [
+      "How to trade if ISM manufacturing PMI misses expectations?",
+      "What is the market impact of a strong services PMI?",
+      "Analyze the latest PMI data and suggest a sector rotation.",
+      "Should I buy or sell copper based on China Caixin PMI?",
+      "Calculate the implied growth from manufacturing PMI trends."
+    ]
+  },
+  {
+    "id": "retail_sales_consumer_trade",
+    "concept": "Trade consumer stocks and currencies based on retail sales surprise and consumption trends.",
+    "disambiguator": "Focuses on consumer spending as a driver for discretionary sectors.",
+    "example": "If US retail sales ex-auto surprise +0.8% MoM vs +0.3% expected, long consumer discretionary ETF and short USDJPY anticipating risk-on.",
+    "queries": [
+      "How to trade if retail sales beat expectations?",
+      "What is the impact of retail sales on the USD?",
+      "Analyze consumer spending data and suggest a trade on Amazon stock.",
+      "Should I buy consumer staples or discretionary after a strong retail report?",
+      "Calculate the contribution of e-commerce to retail sales growth."
+    ]
+  },
+  {
+    "id": "mempool_arbitrage_analysis",
+    "concept": "Analyze mempool transactions to identify arbitrage opportunities between DEXs.",
+    "disambiguator": "Focuses on real-time pending transactions rather than historical data.",
+    "example": "If a large buy order for ETH is pending on Uniswap, predict price impact and execute a buy on Sushiswap before the transaction confirms to profit from the price difference.",
+    "queries": [
+      "Find arbitrage opportunities in the current mempool between Uniswap and Sushiswap.",
+      "What pending transactions could cause price slippage on Curve?",
+      "Identify sandwich attack opportunities in the latest mempool data.",
+      "Calculate potential profit from a mempool arbitrage trade on ETH/USDC.",
+      "List DEX pairs with the highest pending volume imbalance."
+    ]
+  },
+  {
+    "id": "defi_yield_farming_optimizer",
+    "concept": "Optimize yield farming strategies by comparing APYs across multiple protocols and considering gas costs.",
+    "disambiguator": "Includes gas cost and impermanent loss calculations, unlike simple APY aggregators.",
+    "example": "Compare Aave USDC deposit APY of 3.5% vs. Compound USDC supply APY of 3.2%, factoring in a gas cost of $5 to move funds, and determine if switching is profitable.",
+    "queries": [
+      "What is the best yield farming strategy for USDC considering gas fees?",
+      "Compare APYs for ETH staking on Lido, Rocket Pool, and Coinbase.",
+      "Calculate impermanent loss for providing liquidity in the ETH/USDC 0.3% pool.",
+      "Find the highest yield for DAI across Aave, Compound, and Yearn.",
+      "Optimize a multi-protocol yield strategy for a $10,000 USDC deposit."
+    ]
+  },
+  {
+    "id": "protocol_fee_revenue_analysis",
+    "concept": "Evaluate DeFi protocol health by analyzing fee revenue and token emissions.",
+    "disambiguator": "Focuses on sustainability and valuation metrics like P/E ratio for protocols.",
+    "example": "Uniswap generated $100M in fees last month; with a market cap of $5B, its price-to-fee ratio is 50x.",
+    "queries": [
+      "What is the current price-to-fee ratio for Uniswap?",
+      "Compare fee revenue of Aave vs. Compound over the past week.",
+      "Is Sushiswap's token emission sustainable given its fee revenue?",
+      "Calculate the annualized fee yield for LPs on Curve's 3pool.",
+      "List top DeFi protocols by fee generation in the last 30 days."
+    ]
+  },
+  {
+    "id": "liquidation_risk_assessment",
+    "concept": "Assess liquidation risk for leveraged positions in lending protocols using on-chain data.",
+    "disambiguator": "Uses real-time oracle prices and borrow rates, not just collateral ratios.",
+    "example": "A position with 1 ETH collateral and 0.8 ETH debt has a health factor of 1.25; if ETH price drops 10%, health factor falls to 1.02, triggering liquidation.",
+    "queries": [
+      "What is the liquidation risk for a 2x leveraged ETH position on Aave?",
+      "Calculate the price drop needed to liquidate a DAI collateral position on Compound.",
+      "Monitor my account's health factor across multiple protocols.",
+      "Find all positions currently below 1.1 health factor on MakerDAO.",
+      "Simulate liquidation cascades if ETH drops 15%."
+    ]
+  },
+  {
+    "id": "stablecoin_peg_tracker",
+    "concept": "Track stablecoin peg deviations and identify arbitrage opportunities.",
+    "disambiguator": "Focuses on on-chain trading pairs and redemption mechanisms, not just exchange prices.",
+    "example": "If DAI trades at $0.99 on Uniswap, you can buy DAI cheap and redeem it for $1 via MakerDAO's PSM, netting 1% profit.",
+    "queries": [
+      "Is USDC trading below $1 on any major DEX?",
+      "Calculate the arbitrage profit from buying DAI at $0.99 and redeeming via PSM.",
+      "Monitor the DAI/USD peg deviation in real-time.",
+      "Which stablecoin has the largest deviation from $1 right now?",
+      "Find the cheapest route to mint DAI using the MakerDAO PSM."
+    ]
+  },
+  {
+    "id": "cross_chain_bridge_arbitrage",
+    "concept": "Identify arbitrage opportunities across different blockchains using bridge token prices.",
+    "disambiguator": "Considers bridge fees, slippage, and transfer times, unlike simple price comparisons.",
+    "example": "ETH is $1800 on Ethereum but $1820 on Polygon; after bridge fee of $5 and gas of $2, net profit is $13 per ETH.",
+    "queries": [
+      "Is there an arbitrage opportunity for USDC between Ethereum and Arbitrum?",
+      "Calculate net profit for bridging ETH from Polygon to Avalanche.",
+      "List price differences for WETH across major L2s.",
+      "What are the current bridge fees for transferring stablecoins to Optimism?",
+      "Find the best cross-chain arbitrage route for a $10,000 trade."
+    ]
+  },
+  {
+    "id": "nft_floor_price_momentum",
+    "concept": "Analyze NFT collection floor price trends and on-chain trading volume to predict short-term moves.",
+    "disambiguator": "Uses on-chain metrics like unique buyers and wash trading detection, not just floor price.",
+    "example": "Bored Ape Yacht Club floor price rose 5% in 24h with 10% increase in unique buyers; predict continued momentum.",
+    "queries": [
+      "Which NFT collections have the highest floor price momentum in the last 24h?",
+      "Detect wash trading in the CryptoPunks market.",
+      "Calculate the correlation between floor price and trading volume for Azuki.",
+      "List NFT collections with increasing unique buyer counts.",
+      "Forecast floor price movement for Pudgy Penguins using on-chain data."
+    ]
+  },
+  {
+    "id": "liquidity_pool_imbalance_detector",
+    "concept": "Detect large imbalances in DEX liquidity pools that signal price movements or arbitrage.",
+    "disambiguator": "Focuses on pool composition changes rather than price, enabling early signals.",
+    "example": "If the ETH/DAI pool on Uniswap has 70% ETH and 30% DAI (vs 50/50), it indicates expected ETH price drop.",
+    "queries": [
+      "Which Uniswap V3 pools have the largest imbalance?",
+      "Detect a pending large swap by analyzing pool imbalance changes.",
+      "Calculate the expected price impact from current pool composition in the ETH/USDC 0.05% pool.",
+      "Find pools with over 80% of one asset indicating potential manipulation.",
+      "Monitor Balancer pools for rebalancing opportunities."
+    ]
+  },
+  {
+    "id": "order_book_imbalance_impact",
+    "concept": "Estimate immediate price impact from order book imbalance at millisecond timescales.",
+    "disambiguator": "Focuses on the snapshot-level imbalance between bid and ask volumes, not historical volatility.",
+    "example": "Given bid volume 5000 shares at $100.01 and ask volume 2000 shares at $100.02, compute expected price move of +$0.003 based on imbalance ratio of 0.6.",
+    "queries": [
+      "How much will the price move if there are 5000 shares on the bid and 2000 on the ask?",
+      "What is the predicted price impact from an order book imbalance of 0.6?",
+      "Calculate the immediate price change due to a bid-ask volume ratio of 2.5.",
+      "Estimate the price shift from a 60% buy imbalance in the L2 book.",
+      "Given bid size 8000 and ask size 3000, what is the expected price impact?"
+    ]
+  },
+  {
+    "id": "microstructure_noise_filtering",
+    "concept": "Separate true price signal from bid-ask bounce and tick noise in high-frequency data.",
+    "disambiguator": "Distinguishes between information-driven moves and microstructure frictions like bid-ask bounce.",
+    "example": "From a sequence of trades at $100.01, $100.02, $100.01, extract the underlying efficient price of $100.015 using a moving average filter.",
+    "queries": [
+      "Filter out the bid-ask bounce from these trade prices: 100.01, 100.02, 100.01, 100.02.",
+      "What is the efficient price after removing microstructure noise from the tick data?",
+      "Separate the true price signal from the bid-ask spread bounce in this trade sequence.",
+      "Estimate the latent price using a microstructure noise filter on the last 10 trades.",
+      "Remove tick noise from the price series to get the underlying value."
+    ]
+  },
+  {
+    "id": "latency_arbitrage_opportunity",
+    "concept": "Detect price discrepancies across venues caused by latency differences for arbitrage.",
+    "disambiguator": "Exploits speed differences, not stale quotes; relies on real-time feed comparison.",
+    "example": "If BTC is $50,000 on exchange A and $50,005 on exchange B with 5ms delay, compute profit after fees and latency cost of $0.5 per trade.",
+    "queries": [
+      "Is there a latency arbitrage opportunity between exchange A at 50000 and exchange B at 50005 with 5ms delay?",
+      "Calculate the net profit from triangular latency arbitrage across three venues.",
+      "What is the arbitrage spread after accounting for 2ms latency and $0.1 fee?",
+      "Detect price discrepancies across venues due to network latency.",
+      "Given quotes from two exchanges with a 10ms difference, is there a risk-free profit?"
+    ]
+  },
+  {
+    "id": "slippage_modeling_for_order_slicing",
+    "concept": "Model price slippage as a function of order size, volatility, and liquidity for optimal order slicing.",
+    "disambiguator": "Focuses on the incremental cost of each child order, not total market impact.",
+    "example": "For a 10,000 share order with 5% volatility and 1000 share market depth, expected slippage is 0.15% per 1000 shares.",
+    "queries": [
+      "How much slippage can I expect for a 10,000 share order given current volatility and depth?",
+      "Model the slippage cost of slicing a large order into 10 child orders of 1000 shares each.",
+      "Calculate the incremental slippage for additional 500 shares in a high-volatility environment.",
+      "What is the price impact per share for a 5000 share order when the order book has 2000 shares at each level?",
+      "Estimate the total slippage for a 50,000 share order using a linear impact model."
+    ]
+  },
+  {
+    "id": "cointegration_of_order_flow_and_price",
+    "concept": "Model the long-run equilibrium relationship between order flow imbalance and mid-price changes.",
+    "disambiguator": "Looks at cointegration over seconds to minutes, not immediate impact.",
+    "example": "With order flow imbalance series and mid-price series cointegrated with coefficient 0.8, a 1000 share imbalance predicts a $0.002 price move in 10 seconds.",
+    "queries": [
+      "Is order flow imbalance cointegrated with price changes over 30-second intervals?",
+      "What is the long-run relationship between cumulative order flow and mid-price?",
+      "Estimate the cointegration coefficient between buy volume minus sell volume and price.",
+      "How does a persistent order flow imbalance affect price over minutes?",
+      "Calculate the error correction term for price deviations from the order flow equilibrium."
+    ]
+  },
+  {
+    "id": "adaptive_market_making_spread",
+    "concept": "Dynamically adjust bid-ask spread based on inventory risk and adverse selection.",
+    "disambiguator": "Differentiates from fixed spread strategies by incorporating real-time inventory and volatility.",
+    "example": "With current inventory of 500 shares, volatility 2%, and optimal spread formula, set bid at $99.90 and ask at $100.10.",
+    "queries": [
+      "What should my bid-ask spread be given I hold 500 shares and volatility is 2%?",
+      "Adapt the market making spread to minimize inventory risk and adverse selection.",
+      "Calculate the optimal spread for a market maker with 1000 share inventory and 1.5% volatility.",
+      "How to adjust quotes dynamically based on current inventory and order flow?",
+      "Given recent adverse selection probability of 0.3, what is the fair spread?"
+    ]
+  },
+  {
+    "id": "execution_cost_minimization_vwap",
+    "concept": "Minimize execution cost by tracking the volume-weighted average price (VWAP) benchmark.",
+    "disambiguator": "Focuses on VWAP deviation cost, not total market impact.",
+    "example": "Execute a 20,000 share order over 2 hours; schedule trades proportional to volume profile to achieve VWAP within 0.05%.",
+    "queries": [
+      "How to schedule a 20,000 share order to minimize VWAP slippage?",
+      "Calculate the expected VWAP deviation for a given volume profile and order size.",
+      "What is the optimal participation rate to track VWAP for a 10,000 share order?",
+      "Minimize execution cost relative to VWAP using historical volume patterns.",
+      "Given 5-minute volume buckets, how many shares to trade each period to match VWAP?"
+    ]
+  },
+  {
+    "id": "flash_crash_impact_estimation",
+    "concept": "Estimate price impact and recovery during extreme high-frequency volatility events like flash crashes.",
+    "disambiguator": "Focuses on non-linear impact and rebound patterns, not steady-state models.",
+    "example": "During a 10-second flash crash with 5% drop and 20x volume, estimate a 0.5% rebound and 0.2% permanent impact.",
+    "queries": [
+      "What is the expected price impact during a flash crash with 5% drop and 20x volume?",
+      "Estimate the rebound and permanent impact after a high-frequency volatility spike.",
+      "How much does a flash crash affect mid-price in the first 10 seconds?",
+      "Model the non-linear price impact during a sudden liquidity crisis.",
+      "Given a 3% flash crash and 15x volume surge, what is the recovery pattern?"
+    ]
+  },
+  {
+    "id": "news_sentiment_score",
+    "concept": "Calculate a sentiment score from financial news articles for a given stock or sector.",
+    "disambiguator": "Focuses on quantitative sentiment extraction from news text, not social media or other sources.",
+    "example": "From 50 news articles about AAPL today, 35 are positive, 10 neutral, 5 negative → sentiment score = 0.6.",
+    "queries": [
+      "What is the sentiment score for Tesla based on today's news?",
+      "Compute aggregate news sentiment for the banking sector this week.",
+      "How does news sentiment for Amazon compare to its 30-day average?",
+      "Give me the sentiment score for Microsoft from last hour's news.",
+      "Calculate the sentiment score for gold using recent financial news."
+    ]
+  },
+  {
+    "id": "social_media_sentiment_shift",
+    "concept": "Detect sudden shifts in social media sentiment for a stock, indicating potential volatility.",
+    "disambiguator": "Focuses on abrupt changes over short time windows, not absolute levels.",
+    "example": "Twitter sentiment for GME dropped from 0.8 to 0.3 in 2 hours → alert for increased volatility.",
+    "queries": [
+      "Detect any sudden sentiment shift for GameStop on Reddit in the last hour.",
+      "Has Twitter sentiment for AMC changed significantly in the past 30 minutes?",
+      "Alert me if there's a sharp drop in sentiment for Dogecoin on social media.",
+      "Is there a sentiment spike for Meta from social media in the last 15 minutes?",
+      "Compare sentiment shift for NVIDIA today vs yesterday's average."
+    ]
+  },
+  {
+    "id": "sentiment_volume_correlation",
+    "concept": "Compute correlation between social media sentiment and trading volume for a stock over a period.",
+    "disambiguator": "Measures relationship between sentiment and volume, not price or other metrics.",
+    "example": "Correlation between daily sentiment and volume for TSLA over 30 days is 0.45.",
+    "queries": [
+      "What is the correlation between Bitcoin sentiment on Twitter and its trading volume this week?",
+      "Calculate sentiment-volume correlation for Apple over the last 10 days.",
+      "Is there a strong correlation between Reddit sentiment and volume for Palantir?",
+      "Show me the rolling 5-day correlation of sentiment and volume for AMD.",
+      "Compare sentiment-volume correlation for SPY and QQQ."
+    ]
+  },
+  {
+    "id": "sentiment_based_trading_signal",
+    "concept": "Generate a buy/sell/hold signal based on a composite sentiment score from multiple sources.",
+    "disambiguator": "Actionable signal derived from sentiment, not just a score.",
+    "example": "Composite sentiment score 0.7 (threshold 0.6) → generate 'Buy' signal for MSFT.",
+    "queries": [
+      "Should I buy or sell Netflix based on current news and social sentiment?",
+      "Generate a trading signal for Coca-Cola using today's sentiment data.",
+      "Is the sentiment for Exxon triggering a buy or sell signal?",
+      "What is the sentiment-based signal for the S&P 500 index?",
+      "Based on sentiment, should I hold my position in Shopify?"
+    ]
+  },
+  {
+    "id": "sentiment_anomaly_detection",
+    "concept": "Identify anomalous sentiment patterns that deviate significantly from historical norm for a stock.",
+    "disambiguator": "Focuses on outliers in sentiment distribution, not simple thresholds.",
+    "example": "Current sentiment for MRNA is 0.9, but 90% of historical values are below 0.5 → anomaly flagged.",
+    "queries": [
+      "Are there any sentiment anomalies for Pfizer compared to its history?",
+      "Detect unusual sentiment patterns for Zoom today.",
+      "Is the current sentiment for Peloton an outlier?",
+      "Find anomalies in social media sentiment for cannabis stocks this week.",
+      "Has sentiment for Boeing deviated from its normal range?"
+    ]
+  },
+  {
+    "id": "sentiment_impact_on_price",
+    "concept": "Estimate the expected price impact of a given sentiment score using historical regression.",
+    "disambiguator": "Quantifies price change due to sentiment, not just direction.",
+    "example": "Sentiment score 0.8 for AAPL, historical impact model predicts +0.5% price move within 1 hour.",
+    "queries": [
+      "What price impact is expected from today's negative sentiment for Meta?",
+      "Estimate the price move for AMD given a sentiment score of 0.3.",
+      "How much would positive sentiment for Tesla affect its stock price?",
+      "Predict the price impact of a Reddit sentiment surge for AMC.",
+      "What is the expected price change for SPY from current news sentiment?"
+    ]
+  },
+  {
+    "id": "sentiment_drift_tracking",
+    "concept": "Track the gradual drift of sentiment for a stock over multiple days to identify trend changes.",
+    "disambiguator": "Focuses on slow changes over time, not abrupt shifts.",
+    "example": "Sentiment for JPM drifted from 0.6 to 0.4 over 10 days → bearish trend.",
+    "queries": [
+      "Is sentiment for Microsoft drifting upwards or downwards this month?",
+      "Track the 7-day sentiment drift for Goldman Sachs.",
+      "Show the sentiment drift for the energy sector over the last 2 weeks.",
+      "Has sentiment for Disney been gradually declining?",
+      "Monitor sentiment drift for Bitcoin over the past 5 days."
+    ]
+  },
+  {
+    "id": "sentiment_contrarian_indicator",
+    "concept": "Identify when extreme sentiment levels suggest a contrarian trade (overbought/oversold).",
+    "disambiguator": "Uses sentiment extremes to predict reversals, not trend following.",
+    "example": "Sentiment for TSLA at 0.95 (top 5% historical) → contrarian sell signal.",
+    "queries": [
+      "Is sentiment for Apple extremely bearish indicating a buy opportunity?",
+      "Identify contrarian signals from extreme social media sentiment for AMZN.",
+      "Is there a contrarian sell signal for Bitcoin due to overly bullish sentiment?",
+      "Find stocks where sentiment is in the top 10% historically for a short trade.",
+      "Should I take a contrarian position on Meta based on current sentiment extremes?"
+    ]
+  },
+  {
+    "id": "lagged_return_features",
+    "concept": "Generate lagged returns as features to capture short-term momentum.",
+    "disambiguator": "Focuses on time-lagged returns rather than raw prices or volume.",
+    "example": "For stock ABC with daily returns [0.01, -0.02, 0.03], create lag-1 return feature: [NaN, 0.01, -0.02] and lag-2: [NaN, NaN, 0.01].",
+    "queries": [
+      "How to create lagged return features for momentum trading?",
+      "What lag windows are best for daily return features?",
+      "Generate lagged return features for a list of stocks.",
+      "How to handle NaN values in lagged return features?",
+      "Can lagged returns predict next-day price direction?"
+    ]
+  },
+  {
+    "id": "rolling_volatility_features",
+    "concept": "Compute rolling window volatility (standard deviation of returns) as a risk feature.",
+    "disambiguator": "Uses rolling standard deviation of returns, not variance or other risk measures.",
+    "example": "For 10-minute returns of ETH-USD, compute 60-period rolling volatility: if returns std over last 60 minutes = 0.002, feature value = 0.002.",
+    "queries": [
+      "Calculate rolling volatility for intraday trading signals.",
+      "What window size is typical for rolling volatility features?",
+      "How to compute rolling standard deviation of returns in Python?",
+      "Use rolling volatility as a feature to predict market regime shifts.",
+      "Compare rolling volatility with GARCH for feature engineering."
+    ]
+  },
+  {
+    "id": "technical_indicator_combinations",
+    "concept": "Combine multiple technical indicators (e.g., RSI and MACD) into a single feature via ratio or difference.",
+    "disambiguator": "Creates synthetic features from indicator pairs, not just using them individually.",
+    "example": "Feature = RSI(14) / (MACD(12,26) + 1). If RSI=70 and MACD=0.5, feature = 70 / 1.5 = 46.67.",
+    "queries": [
+      "How to combine RSI and MACD into a single feature?",
+      "What are common technical indicator combinations for feature engineering?",
+      "Create a feature by dividing Bollinger Bands width by ATR.",
+      "Is the ratio of two indicators more predictive than each alone?",
+      "Generate a feature from the difference between two moving averages."
+    ]
+  },
+  {
+    "id": "order_book_imbalance_features",
+    "concept": "Calculate order book imbalance from bid-ask volume to predict short-term price moves.",
+    "disambiguator": "Uses real-time order book data, not just trade or quote data.",
+    "example": "Imbalance = (bid_volume - ask_volume) / (bid_volume + ask_volume). If bid_volume=500, ask_volume=300, imbalance = 0.25.",
+    "queries": [
+      "How to compute order book imbalance as a feature?",
+      "Use order book imbalance to predict next tick price direction.",
+      "What is the best way to normalize order book imbalance?",
+      "Create a feature from order book depth imbalance.",
+      "Does order book imbalance work better for liquid stocks?"
+    ]
+  },
+  {
+    "id": "cross_asset_correlation_features",
+    "concept": "Compute rolling correlation between two assets as a feature for pairs trading or hedging.",
+    "disambiguator": "Focuses on pairwise correlation, not single-asset features.",
+    "example": "Rolling 20-day correlation between AAPL and MSFT returns: if correlation = 0.85, feature = 0.85.",
+    "queries": [
+      "How to compute rolling correlation between two stocks?",
+      "Use cross-asset correlation as a feature in a trading model.",
+      "What window length is optimal for correlation features?",
+      "Generate a feature representing the correlation between gold and silver.",
+      "Can correlation features help in mean reversion strategies?"
+    ]
+  },
+  {
+    "id": "fourier_transform_frequency_features",
+    "concept": "Apply Fourier transform to price series to extract dominant frequencies as features.",
+    "disambiguator": "Captures periodic patterns in time domain, unlike typical trend or momentum indicators.",
+    "example": "For hourly forex data, FFT yields dominant cycle length of 24 hours: feature = magnitude at 24-hour frequency = 0.3.",
+    "queries": [
+      "How to use Fourier transform to create features for trading?",
+      "Extract frequency domain features from stock prices.",
+      "What are the best frequencies to capture market cycles?",
+      "Apply FFT to detect seasonality in commodity prices.",
+      "Combine Fourier features with machine learning for price prediction."
+    ]
+  },
+  {
+    "id": "market_microstructure_noise_features",
+    "concept": "Estimate market microstructure noise (e.g., bid-ask bounce) from high-frequency data as a feature.",
+    "disambiguator": "Focuses on noise level, not signal, to identify market quality or liquidity.",
+    "example": "Using Roll's spread estimator: if covariance of consecutive price changes = -0.0001, effective spread = 2*sqrt(-cov) = 0.02.",
+    "queries": [
+      "How to estimate market microstructure noise from tick data?",
+      "Use bid-ask bounce as a feature for volatility prediction.",
+      "What is the best estimator for microstructure noise?",
+      "Create a feature representing the level of market noise.",
+      "Does high microstructure noise indicate illiquidity?"
+    ]
+  },
+  {
+    "id": "sentiment_aggregation_features",
+    "concept": "Aggregate news or social media sentiment scores into a single feature using decay-weighted average.",
+    "disambiguator": "Combines multiple sentiment sources with time decay, not just using raw sentiment scores.",
+    "example": "For sentiment scores [0.5, -0.2, 0.3] with half-life 1 day, aggregate = (0.5*1 + -0.2*0.5 + 0.3*0.25)/(1+0.5+0.25) = 0.257.",
+    "queries": [
+      "How to aggregate sentiment scores from multiple news sources?",
+      "Create a decay-weighted sentiment feature for trading.",
+      "What half-life should I use for sentiment aggregation?",
+      "Combine Twitter and news sentiment into one feature.",
+      "Use aggregated sentiment to predict earnings surprises."
+    ]
+  },
+  {
+    "id": "spot_futures_basis_arbitrage",
+    "concept": "Identify and trade the price difference between spot and perpetual futures for the same asset.",
+    "disambiguator": "Focuses on basis (futures minus spot) without leverage or funding rate considerations.",
+    "example": "BTC spot at 60,000, perpetual at 60,300; buy spot, short perpetual, profit 300 when basis narrows.",
+    "queries": [
+      "What is the current basis between BTC spot and perpetual?",
+      "How to execute a basis trade on ETH?",
+      "What is the maximum historical basis for SOL?",
+      "Identify arbitrage opportunities when basis exceeds 1% for any crypto.",
+      "Calculate the PnL if basis goes from 0.5% to 0.1% on a $100k position."
+    ]
+  },
+  {
+    "id": "funding_rate_arbitrage",
+    "concept": "Profit from the periodic funding payments in perpetual futures by taking opposing positions.",
+    "disambiguator": "Focuses on capturing funding rate differentials, not price convergence.",
+    "example": "Open long spot and short perpetual when funding rate is negative (short pays long), collect funding while delta-neutral.",
+    "queries": [
+      "Which perpetuals have the highest positive funding rate now?",
+      "How to capture funding rate arbitrage on BTC?",
+      "What is the annualized return from funding rate arbitrage on ETH?",
+      "Show me funding rate history for SOL perpetual.",
+      "Set up a funding rate arbitrage bot for top 10 assets."
+    ]
+  },
+  {
+    "id": "triangular_spot_futures_arbitrage",
+    "concept": "Exploit price discrepancies across three related markets including spot and perpetual.",
+    "disambiguator": "Involves three assets or pairs, combining spot and futures.",
+    "example": "BTC/USDT spot 60,000, ETH/BTC perpetual 0.033, ETH/USDT spot 2,000; trade triangle for 0.5% profit.",
+    "queries": [
+      "Find triangular arbitrage opportunities involving BTC, ETH, and USDT.",
+      "How to execute triangular arbitrage with spot and perpetual?",
+      "What is the maximum profit from triangular arbitrage on SOL, BTC, and USDT?",
+      "Show me all triangular paths with positive expected return.",
+      "Calculate capital needed for triangular arbitrage of size 10 BTC."
+    ]
+  },
+  {
+    "id": "cross_exchange_futures_arbitrage",
+    "concept": "Arbitrage between perpetual futures on different exchanges for the same asset.",
+    "disambiguator": "Focuses on price differences across venues, not within the same exchange.",
+    "example": "BTC perpetual on Binance at 60,300, on Bybit at 60,350; long Binance, short Bybit for 50 profit.",
+    "queries": [
+      "What is the price difference for BTC perpetual between Binance and Bybit?",
+      "Identify arbitrage opportunities across exchanges for ETH perpetual.",
+      "How to execute cross-exchange futures arbitrage?",
+      "Show me the top 5 price discrepancies now.",
+      "What are the risks in cross-exchange futures arbitrage?"
+    ]
+  },
+  {
+    "id": "index_vs_futures_arbitrage",
+    "concept": "Trade the difference between a perpetual futures price and its underlying index price.",
+    "disambiguator": "Uses the index as a reference, not a direct spot price.",
+    "example": "BTC index 60,000, perpetual at 60,400; short perpetual, long index via basket of spot to profit from convergence.",
+    "queries": [
+      "What is the premium of BTC perpetual over its index?",
+      "How to arbitrage index vs futures for ETH?",
+      "Calculate the fair value gap for SOL perpetual.",
+      "Show me when perpetual deviated more than 2% from index.",
+      "Set up an alert for index-futures spread > 1%."
+    ]
+  },
+  {
+    "id": "calendar_spread_perpetual_arbitrage",
+    "concept": "Trade the price difference between two different perpetual futures with different expiry or roll dates.",
+    "disambiguator": "Involves perpetuals with different settlement times, not quarterly futures.",
+    "example": "BTC perpetual with quarterly settlement vs BTC perpetual with monthly settlement; long the cheaper, short the expensive.",
+    "queries": [
+      "What is the spread between different BTC perpetual expiries?",
+      "How to execute a calendar spread on ETH perpetuals?",
+      "Identify mispricing in perpetual futures with different roll dates.",
+      "Calculate the carry for SOL perpetual calendar spread.",
+      "Show me historical spreads for BTC perpetual calendar."
+    ]
+  },
+  {
+    "id": "synthetic_long_short_arbitrage",
+    "concept": "Create a synthetic position using spot and futures to exploit mispricing between synthetic and actual positions.",
+    "disambiguator": "Focuses on constructing synthetics and comparing to direct positions.",
+    "example": "Synthetic long BTC = long perpetual + short spot; if cheaper than actual long spot, arbitrage.",
+    "queries": [
+      "How to create a synthetic long BTC using spot and perpetual?",
+      "Is the synthetic long cheaper than the actual spot for ETH?",
+      "Find arbitrage opportunities between synthetic and actual positions.",
+      "Calculate the cost of synthetic short for SOL.",
+      "Show me mispricing in synthetic vs actual for top assets."
+    ]
+  },
+  {
+    "id": "volatility_arbitrage_via_futures",
+    "concept": "Profit from differences between implied volatility in perpetual futures and realized volatility of the spot.",
+    "disambiguator": "Uses perpetual futures as a volatility proxy, not options.",
+    "example": "If perpetual premium implies high volatility but spot is stable, short perpetual and long spot; profit when premium collapses.",
+    "queries": [
+      "What is the implied volatility from BTC perpetual premium?",
+      "How to execute volatility arbitrage using perpetual futures?",
+      "Compare implied vs realized volatility for ETH.",
+      "Find assets where perpetual premium overestimates future volatility.",
+      "Calculate the PnL of a volatility arbitrage on SOL."
+    ]
+  }
+]

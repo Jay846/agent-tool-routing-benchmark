@@ -1,0 +1,146 @@
+(node:59949) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/jaysalvi11/.gemini/antigravity/scratch/skill_experiment/recover_402.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/jaysalvi11/.gemini/antigravity/scratch/skill_experiment/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Waiting for results_google_gemini_3_1_flash_lite.json to be ready...
+Recovering results_google_gemini_3_1_flash_lite.json...
+Found 52 queries that failed with 402. Resuming them now...
+  [1/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92481 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [2/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92463 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [3/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92466 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [4/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92468 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [5/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92471 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [6/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92465 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [7/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92465 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [8/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92482 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [9/52] Recovered: expert ✗ -> HTTP 402: {"error":{"message":"Prompt tokens limit exceeded: 92481 > 26480. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"provider_name":null,"previous_
+  [10/52] Recovered: expert ✓ -> hyperband_tuner
+  [11/52] Recovered: expert ✓ -> target_leakage_detector
+  [12/52] Recovered: expert ✓ -> target_leakage_detector
+  [13/52] Recovered: expert ✓ -> target_leakage_detector
+  [14/52] Recovered: expert ✗ -> kyc_aml_flag_monitor
+  [15/52] Recovered: expert ✓ -> lime_explainer
+  [16/52] Recovered: expert ✓ -> lime_explainer
+  [17/52] Recovered: expert ✓ -> random_undersampling
+  [18/52] Recovered: expert ✓ -> random_undersampling
+  [19/52] Recovered: expert ✓ -> random_undersampling
+  [20/52] Recovered: expert ✗ -> weight_decay_regularization
+  [21/52] Recovered: expert ✗ -> weight_decay_regularization
+  [22/52] Recovered: expert ✗ -> weight_decay_regularization
+  [23/52] Recovered: expert ✗ -> permutation_importance_calculator
+  [24/52] Recovered: expert ✓ -> l1_lasso_regularization
+  [25/52] Recovered: expert ✓ -> l1_lasso_regularization
+  [26/52] Recovered: expert ✓ -> group_leakage_check
+  [27/52] Recovered: expert ✓ -> group_leakage_check
+  [28/52] Recovered: expert ✓ -> group_leakage_check
+  [29/52] Recovered: expert ✓ -> weight_decay_regularization
+  [30/52] Recovered: expert ✓ -> weight_decay_regularization
+  [31/52] Recovered: expert ✓ -> weight_decay_regularization
+  [32/52] Recovered: expert ✓ -> population_based_training
+  [33/52] Recovered: expert ✓ -> population_based_training
+  [34/52] Recovered: expert ✓ -> population_based_training
+  [35/52] Recovered: expert ✓ -> mean_imputation
+  [36/52] Recovered: expert ✓ -> mean_imputation
+  [37/52] Recovered: expert ✓ -> mean_imputation
+  [38/52] Recovered: expert ✓ -> calibration_curve_builder
+  [39/52] Recovered: expert ✓ -> calibration_curve_builder
+  [40/52] Recovered: expert ✓ -> calibration_curve_builder
+  [41/52] Recovered: expert ✓ -> log_transform_apply
+  [42/52] Recovered: expert ✓ -> log_transform_apply
+  [43/52] Recovered: expert ✓ -> log_transform_apply
+  [44/52] Recovered: expert ✓ -> tomek_links_cleaning
+  [45/52] Recovered: expert ✓ -> tomek_links_cleaning
+  [46/52] Recovered: expert ✓ -> tomek_links_cleaning
+  [47/52] Recovered: expert ✓ -> optuna_study_runner
+  [48/52] Recovered: expert ✗ -> hyperband_tuner
+  [49/52] Recovered: expert ✓ -> optuna_study_runner
+  [50/52] Recovered: expert ✓ -> chi_square_feature_selection
+  [51/52] Recovered: expert ✓ -> chi_square_feature_selection
+  [52/52] Recovered: expert ✓ -> chi_square_feature_selection
+
+Fixed RESULTS — google-gemini-3.1-flash-lite
+size   bare     expert  
+──────────────────────────────
+100    92.5%    96.0%   
+500    90.8%    97.1%   
+2000   90.2%    83.3%   
+Successfully patched results_google_gemini_3_1_flash_lite.json
+
+
+Waiting for results_openai_gpt_4o_mini.json to be ready...
+Recovering results_openai_gpt_4o_mini.json...
+Found 64 queries that failed with 402. Resuming them now...
+  [1/64] Recovered: expert ✗ -> strategy_correlation_matrix
+  [2/64] Recovered: expert ✓ -> portfolio_heat_monitor
+  [3/64] Recovered: expert ✓ -> portfolio_heat_monitor
+  [4/64] Recovered: expert ✗ -> strategy_correlation_monitor
+  [5/64] Recovered: expert ✓ -> overtrading_frequency_monitor
+  [6/64] Recovered: expert ✓ -> overtrading_frequency_monitor
+  [7/64] Recovered: expert ✓ -> overtrading_frequency_monitor
+  [8/64] Recovered: expert ✗ -> lookahead_bias_simulation
+  [9/64] Recovered: expert ✗ -> anchored_validation_multiple_folds
+  [10/64] Recovered: expert ✗ -> nested_cross_validation
+  [11/64] Recovered: expert ✓ -> nested_cross_validation
+  [12/64] Recovered: expert ✓ -> nested_cross_validation
+  [13/64] Recovered: expert ✓ -> nested_cross_validation
+  [14/64] Recovered: expert ✗ -> feature_importance_stability
+  [15/64] Recovered: expert ✗ -> feature_importance_stability
+  [16/64] Recovered: expert ✓ -> permutation_importance_calculator
+  [17/64] Recovered: expert ✓ -> standard_scaler_apply
+  [18/64] Recovered: expert ✓ -> standard_scaler_apply
+  [19/64] Recovered: expert ✗ -> static_factor_normalization
+  [20/64] Recovered: expert ✓ -> hyperband_tuner
+  [21/64] Recovered: expert ✓ -> hyperband_tuner
+  [22/64] Recovered: expert ✓ -> hyperband_tuner
+  [23/64] Recovered: expert ✓ -> target_leakage_detector
+  [24/64] Recovered: expert ✓ -> target_leakage_detector
+  [25/64] Recovered: expert ✓ -> target_leakage_detector
+  [26/64] Recovered: expert ✗ -> kyc_aml_flag_monitor
+  [27/64] Recovered: expert ✗ -> feature_importance_stability
+  [28/64] Recovered: expert ✗ -> hidden_sentiment_explainer
+  [29/64] Recovered: expert ✓ -> random_undersampling
+  [30/64] Recovered: expert ✓ -> random_undersampling
+  [31/64] Recovered: expert ✓ -> random_undersampling
+  [32/64] Recovered: expert ✗ -> weight_decay_regularization
+  [33/64] Recovered: expert ✗ -> weight_decay_regularization
+  [34/64] Recovered: expert ✗ -> weight_decay_regularization
+  [35/64] Recovered: expert ✗ -> target_leakage_detector
+  [36/64] Recovered: expert ✓ -> l1_lasso_regularization
+  [37/64] Recovered: expert ✗ -> weight_decay_regularization
+  [38/64] Recovered: expert ✓ -> group_leakage_check
+  [39/64] Recovered: expert ✓ -> group_leakage_check
+  [40/64] Recovered: expert ✓ -> group_leakage_check
+  [41/64] Recovered: expert ✓ -> weight_decay_regularization
+  [42/64] Recovered: expert ✓ -> weight_decay_regularization
+  [43/64] Recovered: expert ✓ -> weight_decay_regularization
+  [44/64] Recovered: expert ✓ -> population_based_training
+  [45/64] Recovered: expert ✓ -> population_based_training
+  [46/64] Recovered: expert ✓ -> population_based_training
+  [47/64] Recovered: expert ✓ -> mean_imputation
+  [48/64] Recovered: expert ✓ -> mean_imputation
+  [49/64] Recovered: expert ✓ -> mean_imputation
+  [50/64] Recovered: expert ✓ -> calibration_curve_builder
+  [51/64] Recovered: expert ✓ -> calibration_curve_builder
+  [52/64] Recovered: expert ✓ -> calibration_curve_builder
+  [53/64] Recovered: expert ✗ -> null
+  [54/64] Recovered: expert ✗ -> mean_imputation
+  [55/64] Recovered: expert ✓ -> log_transform_apply
+  [56/64] Recovered: expert ✓ -> tomek_links_cleaning
+  [57/64] Recovered: expert ✓ -> tomek_links_cleaning
+  [58/64] Recovered: expert ✓ -> tomek_links_cleaning
+  [59/64] Recovered: expert ✗ -> hyperband_tuner
+  [60/64] Recovered: expert ✗ -> hyperband_tuner
+  [61/64] Recovered: expert ✗ -> hyperband_tuner
+  [62/64] Recovered: expert ✓ -> chi_square_feature_selection
+  [63/64] Recovered: expert ✓ -> chi_square_feature_selection
+  [64/64] Recovered: expert ✗ -> target_leakage_detector
+
+Fixed RESULTS — openai-gpt-4o-mini
+size   bare     expert  
+──────────────────────────────
+100    87.9%    91.4%   
+500    79.3%    82.8%   
+2000   60.9%    69.5%   
+Successfully patched results_openai_gpt_4o_mini.json
+
