@@ -27,7 +27,7 @@ The ability of Large Language Model (LLM) agents to reliably select the correct 
   - The pre-print draft containing the full empirical analysis and conclusions.
 
 ## Cite
-> Jay Salvi. Description Engineering Mitigates Tool-Selection Collapse in Large Language Model Agents. TechRxiv, 2026. DOI: [to be added]
+> Jay Salvi. Description Engineering Mitigates Tool-Selection Collapse in Large Language Model Agents. Zenodo, 2026. DOI: 10.5281/zenodo.21274027
 
 ## License
 Code: MIT. Data: CC BY 4.0.
